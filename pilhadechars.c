@@ -103,7 +103,7 @@ void imprime (Pilha* p)
         //erro no imprimir
         printf("%d\n",q->info);
 
-       // printf(p->prim->info);
+    // printf(p->prim->info);
 }
 
 void imprime_char(Pilha*p)
@@ -116,7 +116,8 @@ void imprime_char(Pilha*p)
 
 /**Funções do deve   Implementação Biblioteca (Pilhas Dinâmicas) */
 //empilha
-void empilha(Pilha*pi ,char val ){
+void empilha(Pilha*pi,char val )
+{
     No* p = (No*) malloc(sizeof(No));
     p->info = val;
     p->prox = pi->prim;
@@ -125,13 +126,14 @@ void empilha(Pilha*pi ,char val ){
 
 
 ///
-int pilhavazia(Pilha *pi){
+int pilhavazia(Pilha *pi)
+{
     return (pi->prim==NULL);
 }
 
 void  desempilha (Pilha* pi)
 {
-   if (pilhavazia(pi))
+    if (pilhavazia(pi))
     {
         printf("Pilha vazia.\n");
         exit(1); /* aborta programa */
@@ -162,42 +164,29 @@ Pilha* criaPilha (void)
 *
 ********************************/
 
-void buscaChar(Pilha*p)
+void ArrumaPilha(Pilha*p,Pilha*secundaria)
 {
     No*q;
-   // Pilha*q
-
-    for(q=p->prim; q!=NULL; q=q->prox){
-       // printf("%s\n",q->info);
-
-        if(strcmp(q->info,")")==0){
-            printf("valor de )))");
-            pop(p);
-        }
-        if(strcmp(q->info,"(")==0){
-            printf("Valor d ");
-            pop(p);
-        }
-
-
+    for(q=p->prim; q!=NULL; q=q->prox)
+    {
+        printf("ER\n");
+        push(secundaria,q->info);
     }
-
-
 }
 
-void buscaChar1(Pilha*p)
+void AuxPilhaTer(Pilha*p,Pilha*terciaria)
 {
     No*q;
 
     for(q=p->prim; q!=NULL; q=q->prox){
-       // printf("%s\n",q->info);
-        if(strcmp(q->info,"*")==0){
-            do{
-                //push(p,q->info);
-                pop(p);
-            }while(strcmp(q->info,"*"));
+        if(q->prox->info =='A'){
+            printf("Otario");
         }
+        printf("Faz algo \n");
+
     }
-
-
 }
+
+
+
+

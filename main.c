@@ -25,26 +25,27 @@ int main()
     char *sub1;
     Pilha*texto=cria();
     Pilha*auxTexto=cria();
+    Pilha*textoTer=cria();
 
     sub=strtok(palavra," ");
     while(sub != NULL){
         printf("\n%s",sub);
         printf(" Tem um A\n");
         push(texto,sub);
+
         sub=strtok(NULL," ");
 
     }
-
-
-    printf("imprimir texto\n");
+    ArrumaPilha(texto,auxTexto);
+    printf("TExtotexto \n");
     imprime_char(texto);
+    printf("texto AuxTexto\n");
+    imprime_char(auxTexto);
 
 
 
 
-    printf("\n imprimir texto apos pop \n");
-   // buscaChar(texto);
-    imprime_char(texto);
+
 
 
 
