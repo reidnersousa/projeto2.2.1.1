@@ -22,28 +22,33 @@ int main()
 
     char palavra[20]={" ( A + B * C )"};
     char *sub;
-    Pilha *texto=cria();
-    Pilha *textoAux=cria();
+    char *sub1;
+    Pilha*texto=cria();
+    Pilha*auxTexto=cria();
+
     sub=strtok(palavra," ");
     while(sub != NULL){
         printf("\n%s",sub);
-        if(sub!='A'){
-            printf("\n  Tem um A");
-        }
+        printf(" Tem um A\n");
         push(texto,sub);
         sub=strtok(NULL," ");
 
     }
-    Pilha*p=cria();
 
-    push(p,'a');
-    push(p,'b');
 
-    pop(p);
-    printf("imprimir p\n");
-    imprime(p);
     printf("imprimir texto\n");
     imprime_char(texto);
+
+
+
+
+    printf("\n imprimir texto apos pop \n");
+   // buscaChar(texto);
+    imprime_char(texto);
+
+
+
+
 
 
 

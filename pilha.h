@@ -21,6 +21,11 @@ struct pilha
     float vet[MAX];
 };
 
+struct pilhaVectorChar
+{
+    char palavra;
+    float vet[MAX];
+};
 
 typedef struct pilha Pilha;
 

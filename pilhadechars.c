@@ -162,20 +162,42 @@ Pilha* criaPilha (void)
 *
 ********************************/
 
-void  pop_CriarOutraPilha (Pilha* p,Pilha*auxilia)
+void buscaChar(Pilha*p)
 {
+    No*q;
+   // Pilha*q
 
-    if (vazia(p))
-    {
-        printf("Pilha vazia.\n");
-        exit(1); /* aborta programa */
+    for(q=p->prim; q!=NULL; q=q->prox){
+       // printf("%s\n",q->info);
+
+        if(strcmp(q->info,")")==0){
+            printf("valor de )))");
+            pop(p);
+        }
+        if(strcmp(q->info,"(")==0){
+            printf("Valor d ");
+            pop(p);
+        }
+
+
     }
 
-    No*aux;
-    aux=p->prim;
-    p->prim=p->prim->prox;
 
-    free(aux);
+}
 
-    return ;
+void buscaChar1(Pilha*p)
+{
+    No*q;
+
+    for(q=p->prim; q!=NULL; q=q->prox){
+       // printf("%s\n",q->info);
+        if(strcmp(q->info,"*")==0){
+            do{
+                //push(p,q->info);
+                pop(p);
+            }while(strcmp(q->info,"*"));
+        }
+    }
+
+
 }
