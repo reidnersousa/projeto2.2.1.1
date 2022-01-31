@@ -109,6 +109,11 @@ void imprime (Pilha* p)
 void imprime_char(Pilha*p)
 {
     No*q;
+    if (vazia(p))
+    {
+        printf("Pilha vazia.\n");
+        exit(1); /* aborta programa */
+    }
     for(q=p->prim; q!=NULL; q=q->prox)
         printf("%s\n",q->info);
 }
@@ -163,30 +168,90 @@ Pilha* criaPilha (void)
 *
 *
 ********************************/
-
+/* Arrumar pilha Cocola na forma inversa  */
 void ArrumaPilha(Pilha*p,Pilha*secundaria)
 {
     No*q;
     for(q=p->prim; q!=NULL; q=q->prox)
     {
-        printf("ER\n");
+        //printf("ER\n");
         push(secundaria,q->info);
     }
 }
+
+
 
 void AuxPilhaTer(Pilha*p,Pilha*terciaria)
 {
     No*q;
 
-    for(q=p->prim; q!=NULL; q=q->prox){
-        if(q->prox->info =='A'){
-            printf("Otario");
+    for( q =p ; q->info  != '('; q=q->prox);
+
+    if(q==NULL)
+    {
+        printf("Não cadastrado");
+        return ;
+    }
+    // if(q->prox->info =='A'){
+    printf("Otario");
+    //}
+    printf("Faz algo \n");
+
+
+}
+
+
+void ajudaEu(Pilha*p, int tamanhoPilha,Pilha *pTer)
+{
+    No*q;
+    int i=0;
+    int v[10];
+    int tamanho=tamanhoPilha;
+    for(q=p->prim; q!=NULL; q=q->prox)
+    {
+        i++;
+        printf("[%d]%s\n",i,q->info);
+        // printf("%d\n",q->info);
+        if(strcmp(q->info,"(")==0)
+        {
+            printf("Funcionar \n ");
+            pop(p);
+            tamanhoPilha-1;
         }
-        printf("Faz algo \n");
+        if(strcmp(q->info,")")==0)
+        {
+            imprime_char_Unico(p,tamanhoPilha);
+            //ArrumaPilha1So(p,pTer);
+        }
+
+
 
     }
+
+    //if(strcmp(q->info,""))
+
 }
 
 
 
+void ArrumaPilha1So(Pilha*p,Pilha*secundaria)
+{
+    No*q;
+    q=p->prim;
+    //for(q=p->prim; q!=NULL; q=q->prox){
+    printf("Feito com Arruma pilha1 so \n");
+    push(secundaria,q->info);
+    //}
+}
+
+void imprime_char_Unico(Pilha*p,int tama)
+{
+    No*q;
+    int indice;
+    q=p->prim;
+    for(indice=0; indice<tama ; indice++){
+        printf("Imprimiu viu char Unico %s\n",q->info);
+    }
+
+}
 
