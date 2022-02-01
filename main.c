@@ -27,10 +27,10 @@ int main()
     int tamanho=0 ,i;
     int pesq=0 , pdir=0;
     Pilha*texto=cria();
-    Pilha*textoOrd=cria();
-    Pilha*textoTer=cria();
-    Pilha*textoQuat=cria();
-    Pilha*RecebeOpe=cria();
+    Pilha*textoABC=cria();
+    Pilha*textoOpe=cria();
+    Pilha*textoSec=cria();
+
 
 
 
@@ -55,6 +55,65 @@ int main()
 
     }
 
+    //printf("TExto 1\n");
+    //imprime_char(texto);
+    pop(texto);
+
+    //printf("TExto 1\n");
+    //imprime_char(texto);
+
+    ArrumaPilha(texto,textoSec);
+    pop(textoSec);
+    //printf("TExto 1\n");
+    //imprime_char(textoSec);
+
+    //printf("EStagio 7");
+    ArrumaPilha1So(textoSec,textoABC);
+    //imprime_char(textoABC);
+    pop(textoSec);
+    //printf("NMN>>\n");
+    //imprime_char(textoSec);
+    ArrumaPilha1So(textoSec,textoOpe);
+    //imprime_char(textoOpe);
+
+    //printf("EStagio 10\n");
+    pop(textoSec);
+    //imprime_char(textoSec);
+    ArrumaPilha1So(textoSec,textoABC);
+
+    //  printf("RT\n");
+    //imprime_char(textoABC);
+    pop(textoSec);
+
+    ArrumaPilha1So(textoSec,textoOpe);
+    pop(textoSec);
+    ArrumaPilha1So(textoSec,textoABC);
+
+    printf("ABC\n");
+    imprime_char(textoABC);
+
+    printf("Ope\n");
+    imprime_char(textoOpe);
+
+    printf("Sec\n");
+    imprime_char(textoSec);
+    pop(textoSec);
+
+    printf("\n");
+    ArrumaPilha(textoOpe,textoSec);
+    imprime_char(textoSec);
+
+    printf("\n");
+    ArrumaPilha(textoABC,textoSec);
+    imprime_char(textoSec);
+
+
+
+
+
+
+
+    /*
     printf("TExto 1\n");
     imprime_char(texto);
 
@@ -89,7 +148,7 @@ int main()
     printf("$%\n");
     imprime_char(textoTer);
 
-
+    */
 
 
 
