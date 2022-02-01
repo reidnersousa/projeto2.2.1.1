@@ -22,11 +22,13 @@ int main()
     /**Pilha char ***/
 
     char palavra[20]= {" ( A + B * C )"};
+    char palavra1[20]={"(A*(B+C)/D-E)"};
     char *sub;
     char *sub1;
     int tamanho=0 ,i;
     int pesq=0 , pdir=0;
     Pilha*texto=cria();
+    Pilha*textoAux=cria();
     Pilha*textoABC=cria();
     Pilha*textoOpe=cria();
     Pilha*textoSec=cria();
@@ -99,9 +101,11 @@ int main()
     imprime_char(textoSec);
     pop(textoSec);
 
-    printf("\n");
-    ArrumaPilha(textoOpe,textoSec);
-    imprime_char(textoSec);
+    printf(">>\n");
+    ArrumaPilha(textoOpe,textoAux);
+    imprime_char(textoAux);
+    ArrumaPilha(textoAux,textoSec);
+
 
     printf("\n");
     ArrumaPilha(textoABC,textoSec);
