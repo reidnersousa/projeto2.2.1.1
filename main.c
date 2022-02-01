@@ -11,7 +11,7 @@
 /**
 *                   @Observacao O algoritmo precisa "Duvidas com if  " (ja tentei fazer com vector mas tive d
                                                                         dificuldade com em troca o int por char )
-*                   @Versao     3.1             Ultima atualização 19:30 31/01/2022
+*                   @Versao     3.3             Ultima atualização 20:46 01/02/2022
 *
 */
 int main()
@@ -22,7 +22,7 @@ int main()
     /**Pilha char ***/
 
     char palavra[20]= {" ( A + B * C )"};
-    char palavra1[20]={"(A*(B+C)/D-E)"};
+    char palavra1[40]={"( A * ( B + C ) / D - E )"};
     char *sub;
     char *sub1;
     int tamanho=0 ,i;
@@ -32,7 +32,9 @@ int main()
     Pilha*textoABC=cria();
     Pilha*textoOpe=cria();
     Pilha*textoSec=cria();
+    int tam;
 
+    tam=QuebraString(textoABC,palavra1,sub1);
 
 
 
@@ -57,6 +59,13 @@ int main()
 
     }
 
+    printf("Tamanho %d ",tamanho);
+    imprime_char(texto);
+
+    LimpaPilha(texto,tamanho);
+
+    imprime_char(texto);
+    /*
     //printf("TExto 1\n");
     //imprime_char(texto);
     pop(texto);
@@ -110,49 +119,16 @@ int main()
     printf("\n");
     ArrumaPilha(textoABC,textoSec);
     imprime_char(textoSec);
-
-
-
-
-
-
-
-    /*
-    printf("TExto 1\n");
-    imprime_char(texto);
-
-    pop(texto);
-
-
-    printf("TExto 1\n");
-    imprime_char(texto);
-
-    ArrumaPilha(texto,textoOrd);
-    printf("TExto 3\n");
-    imprime_char(textoOrd);
-
-    pop(textoOrd);
-    printf("TExto 4\n");
-    imprime_char(textoOrd);
-
-    ArrumaPilha1So(textoOrd,textoTer);
-    printf("TExto 5\n");
-    imprime_char(textoTer);
-    pop(textoOrd);
-
-    printf("TExto 6\n");
-    imprime_char(textoOrd);
-
-
-    ArrumaPilha1So(textoOrd,RecebeOpe);
-    printf("TExto 7\n");
-    imprime_char(RecebeOpe);
-    printf("&&&\n");
-    imprime_char(textoOrd);
-    printf("$%\n");
-    imprime_char(textoTer);
-
     */
+
+
+
+
+
+
+
+
+
 
 
 

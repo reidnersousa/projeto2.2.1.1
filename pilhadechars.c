@@ -249,9 +249,46 @@ void imprime_char_Unico(Pilha*p,int tama)
     No*q;
     int indice;
     q=p->prim;
-    for(indice=0; indice<tama ; indice++){
+    for(indice=0; indice<tama ; indice++)
+    {
         printf("Imprimiu viu char Unico %s\n",q->info);
     }
 
 }
 
+void LimpaPilha(Pilha *texto,int tamanho)
+{
+    int ind;
+    for(ind=0; ind<tamanho; ind++)
+    {
+        pop(texto);
+    }
+}
+int QuebraString(Pilha * texto, char palavra[40],char *sub )
+{
+    int tamanho=0;
+    int pesq=0,pdir=0;
+    sub=strtok(palavra," ");
+    while(sub != NULL)
+    {
+        printf("\n%s",sub);
+        push(texto,sub);
+        tamanho++;
+        if(strcmp(sub,"(")==0)
+        {
+            pesq++;
+            printf("( >>%d\n",pesq);
+        }
+        if(strcmp(sub,")")==0)
+        {
+            pdir++;
+            printf("( >>%d\n",pdir);
+        }
+
+
+        sub=strtok(NULL," ");
+
+    }
+    return tamanho;
+
+}
